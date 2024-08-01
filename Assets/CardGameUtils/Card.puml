@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Card{
+    HandleDropPerform(DraggableComponent draggable, DroppableComponent droppable)
+    HandleBeDropPerform(DraggableComponent draggable, DroppableComponent droppable)
+}
+
+class DraggableComponent{
+    OnDropPerform(DraggableComponent draggable, DroppableComponent droppable)
+}
+
+class DroppableComponent{
+    OnBeDropPerform(DraggableComponent draggable, DroppableComponent droppable)
+}
+
+class AbilitySystemComponent{
+    TryActivateAbility(string abilityName, AbilitySystemComponent target)
+}
+DraggableComponent ..[hidden] DroppableComponent
+
+AbilitySystemComponent .[hidden] Card
+
+Card::HandleDropPerform <- DraggableComponent::OnDropPerform
+Card::HandleBeDropPerform -> DroppableComponent::OnBeDropPerform
+
+
+@enduml

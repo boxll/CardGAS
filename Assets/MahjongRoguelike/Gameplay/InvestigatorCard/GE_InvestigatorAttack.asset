@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb00b63dbad4f649bd7628aca5f5536, type: 3}
+  m_Name: GE_InvestigatorAttack
+  m_EditorClassIdentifier: 
+  Modifiers:
+  - rid: 1678249627417313280
+  - rid: 1678249627417313281
+  Source: {fileID: 0}
+  Target: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1678249627417313280
+      type: {class: AttributeBasedModifier, ns: GameplayAbilitySystem, asm: Assembly-CSharp}
+      data:
+        Name: AttributeBasedModifier
+        AttributeToModify: {fileID: 11400000, guid: db878304f6e14324db99b765744e1545, type: 2}
+        Operation: 0
+        Magnitude: -1
+        UseSourceValue: 1
+        BaseAttribute: {fileID: 11400000, guid: e8545ce75bdbd3645bfef44b70b7bed0, type: 2}
+        UseBaseValue: 1
+    - rid: 1678249627417313281
+      type: {class: AttributeBasedModifier, ns: GameplayAbilitySystem, asm: Assembly-CSharp}
+      data:
+        Name: AttributeBasedModifier
+        AttributeToModify: {fileID: 11400000, guid: b50ccbee451a72c47bf0a349fb5e8f52, type: 2}
+        Operation: 0
+        Magnitude: -1
+        UseSourceValue: 1
+        BaseAttribute: {fileID: 11400000, guid: b50ccbee451a72c47bf0a349fb5e8f52, type: 2}
+        UseBaseValue: 1

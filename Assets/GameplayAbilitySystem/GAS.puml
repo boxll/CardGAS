@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+'GameAbilityComponent
+class GameAbilityComponent{
+    Attribute[] AttributeList
+    GameAbility[] GrantedGameAbilityList
+    GameEffect[] AppliedAbilityList
+    float currentValue
+}
+
+'Attribute
+class Attribute{
+    AttributeName name
+    float baseValue
+    float currentValue
+    GetValue()
+    SetValue()
+}
+
+Attribute::name --> AttributeName
+ 
+note "do clamp here" as PreAttributeChange_Note
+Attribute::PreAttributeChange .. PreAttributeChange_Note
+
+note "Animations, Damage number, etc." as PostAttributeChange_Note
+Attribute::PostAttributeChange .. PostAttributeChange_Note
+
+class AttributeName<<ScriptableObject>>{} 
+
+'Modifier
+
+'GameAbility
+class GameAbility{
+    GameAbilityDefinition definition
+    GameEffect[] Effects
+}
+
+GameAbility::definition --> GameAbilityDefinition
+
+class GameAbilityDefinition<<ScriptableObject>>{}
+
+'GameEffect
+class GameEffect{
+    GameEffectDefinition definition
+}
+
+GameEffect::definition --> GameEffectDefinition
+
+class GameEffectDefinition<<ScriptableObject>>{}
+
+@enduml
